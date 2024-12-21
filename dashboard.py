@@ -44,7 +44,7 @@ for i in range(len(data)):
         st.subheader(f"Latest Readings at {latest_reading['Time']}, {latest_reading['Date']}")
         
         # Latest readings summary
-        st.write(latest_reading[['Table Fan', 'PC', 'TV', 'Fan Current', 'PC Current', 'TV Current', 'Voltage']])
+        st.write(latest_reading[['Table Fan', 'PC', 'TV', 'Table Fan Current', 'PC Current', 'TV Current', 'Voltage']])
 
         col1, col2, col3 = st.columns(3)
 
