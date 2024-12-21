@@ -14,7 +14,7 @@ st.title("Real-Time IoT Energy Consumption Dashboard ⚡")
 st.markdown("Monitor the energy usage trends for Table Fan, PC, and TV in real-time.")
 
 # Load data
-data = pd.read_csv("./data/Appliance_Data.csv")
+data = pd.read_csv("Appliance_Data.csv")
 import pandas as pd
 import time
 
@@ -30,7 +30,7 @@ st.title("Real-Time IoT Energy Consumption Dashboard ⚡")
 st.markdown("Monitor the energy usage trends for Table Fan, PC, and TV in real-time.")
 
 # Load data
-data = pd.read_csv("./data/Appliance_Data.csv")
+data = pd.read_csv("Appliance_Data.csv")
 data['Datetime'] = pd.to_datetime(data['Date'] + ' ' + data['Time'])
 
 # Create placeholders for real-time updates
