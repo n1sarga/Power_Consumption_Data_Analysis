@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import time
-import requests
 
 # Set page configuration
 st.set_page_config(
@@ -15,9 +14,7 @@ st.title("Real-Time IoT Energy Consumption Dashboard ⚡")
 st.markdown("Monitor the energy usage trends for Table Fan, PC, and TV in real-time.")
 
 # Load data
-git_url = "https://github.com/n1sarga/Streamlit_App/blob/main/Appliance_Data.csv"
-response = requests.get(git_url)
-data = pd.read_csv(git_url)
+data = pd.read_csv("Appliance_Data.csv")
 data['Datetime'] = pd.to_datetime(data['Date'] + ' ' + data['Time'], dayfirst=True)
 
 # Create placeholders for real-time updates
