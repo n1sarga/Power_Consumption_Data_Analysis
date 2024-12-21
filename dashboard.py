@@ -9,12 +9,10 @@ st.set_page_config(
     layout="wide",
 )
 
-# Title and Description
-st.title("Real-Time IoT Energy Consumption Dashboard ⚡")
-st.markdown("Monitor the energy usage trends for Table Fan, PC, and TV in real-time.")
-
 # Load data
 data = pd.read_csv("Appliance_Data.csv")
+
+# Convert 'Date' and 'Time' columns to datetime format
 data['Datetime'] = pd.to_datetime(data['Date'] + ' ' + data['Time'])
 
 # Create placeholders for real-time updates
@@ -36,8 +34,8 @@ def categorize_hours(hour):
 data['Hour Category'] = data['Datetime'].dt.hour.apply(categorize_hours)
 
 # Simulate real-time data streaming
-for i in range(len(data)):
-    current_data = data.iloc[:i+1]
+while True:
+    current_data = data.iloc[:len(data)-1]
     
     # Check if current_data is empty
     if current_data.empty:
@@ -117,5 +115,5 @@ for i in range(len(data)):
             st.bar_chart(daily_costs)
         else:
             st.warning("No cost data available.")
-        
-    time.sleep(display_interval)  # Dynamic pause for live updates
+
+    time.sleep(display_interval)
