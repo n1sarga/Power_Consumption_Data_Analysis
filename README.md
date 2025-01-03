@@ -22,3 +22,7 @@ This Streamlit application provides a **real-time energy consumption monitoring 
    - Clear and interactive visualizations for intuitive understanding.
 
 The dashboard can be accessed at the following link: https://nisarga-dashboard-cse407.streamlit.app/?utm_medium=social
+
+## Packages Used:
+![pandas](https://img.shields.io/badge/Pandas-2.0.3-purple)  
+![streamlit](https://img.shields.io/badge/Streamlit-1.25.0-brightgreen) 
